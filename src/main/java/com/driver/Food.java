@@ -8,10 +8,16 @@ public class Food {
 	    public Food() {
 	        // Default constructor
 	    	// your code goes here
+			this.id = 0;
+			this.name ="";
+			this.price= 0.0;
 	    }
 
 	    public Food(int id, String name, double price) {
 	    	// your code goes here
+			this.id = id;
+			this.name = name;
+			this.price= price;
 	    }
 
 	    // Getters and Setters
@@ -22,6 +28,7 @@ public class Food {
 
 	    public void setId(int id) {
 	    	// your code goes here
+			this.id=id;
 	    }
 
 	    public String getName() {
@@ -31,6 +38,7 @@ public class Food {
 
 	    public void setName(String name) {
 	    	// your code goes here
+			this.name= name;
 	    }
 
 	    public double getPrice() {
@@ -40,5 +48,6 @@ public class Food {
 
 	    public void setPrice(double price) {
 	    	// your code goes here
+			this.price= price;
 	    }
 }

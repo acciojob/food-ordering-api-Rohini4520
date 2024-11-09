@@ -16,6 +16,12 @@ public class FoodController {
 
     public FoodController() {
     	// your code goes here
+        this.menu= new Menu();
+        this.currentOrder =new Order();
+
+        menu.addMenuItem(new Food(1, "Burger", 5.99));
+        menu.addMenuItem(new Food(2, "pizza", 7.22));
+        menu.addMenuItem(new Food(3, "salad", 4.99));
     }
 
     @GetMapping("/menu")
@@ -27,6 +33,12 @@ public class FoodController {
     @PostMapping("/order/{itemId}")
     public void placeOrder(@PathVariable int itemId) {
     	// your code goes here
+        Food foodItem = menu.getMenuItemById(itemId);
+        if (foodItem != null) {
+            currentOrder.addItem(foodItem);
+        } else {
+            throw new IllegalArgumentException("Item with ID " + itemId + " not found in menu.");
+        }
     }
 
     @GetMapping("/order")
